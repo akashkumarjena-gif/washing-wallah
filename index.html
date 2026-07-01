@@ -3,77 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laundry Wash Booking</title>
+  <title>Washing Wallah</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-    header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; }
-    nav { background: #34495e; padding: 10px; text-align: center; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
-    section { padding: 20px; }
-    form { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; }
-    input, select, button { width: 100%; padding: 10px; margin: 10px 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      color: #333;
+    }
 
+    header {
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-Copied from: Editing washing-wallah/index.html at main · akashkumarjena-gif/washing-wallah - <https://github.com/akashkumarjena-gif/washing-wallah/edit/main/index.html>
-    button { background: #27ae60; color: #fff; border: none; cursor: pointer; }
-    footer { background: #2c3e50; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: #333;
+      text-align: center;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ee0979;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #fff;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    ul li:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ee0979, #ff6a00);
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>WASHING WALLAH</h1>
-    <p>Book your  wash easily!</p>
+    <h1>🧺 Washing Wallah</h1>
+    <p>We wash with care, premium detergent & comfort perfume wash</p>
   </header>
 
   <nav>
     <a href="#services">Services</a>
+    <a href="#offers">Special Offers</a>
     <a href="#booking">Book Now</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="services">
-    <h2>Our Services</h2>
+    <h2>✨ Our Services</h2>
     <ul>
       <li>Washing Machine Wash</li>
+      <li>Premium Detergent Wash</li>
+      <li>Comfort Perfume Wash</li>
       <li>Dry Cleaning</li>
-      <li>Detergent wash with comfort wash</li>
-      <li>159 per month or 9 per kg </li>
+      <li>Ironing</li>
+    </ul>
+  </section>
+
+  <section id="offers">
+    <h2>🎉 Special Offers</h2>
+    <ul>
+      <li>Unlimited Wash – ₹159 per month</li>
+      <li>Pay Per Kg – ₹9 per kg</li>
     </ul>
   </section>
 
   <section id="booking">
-    <h2>Book a Wash</h2>
-    <form>
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" required>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" required>
-
-      <label for="service">Select Service:</label>
-      <select id="service">
+    <h2>📅 Book Your Wash</h2>
+    <form action="https://formspree.io/f/xqevyezb" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Mobile Number" required>
+      <select name="service" required>
+        <option value="">Select Service</option>
         <option>Washing Machine Wash</option>
+        <option>Premium Detergent Wash</option>
+        <option>Comfort Perfume Wash</option>
         <option>Dry Cleaning</option>
         <option>Ironing</option>
       </select>
-
-      <label for="date">Preferred Date:</label>
-      <input type="date" id="date" required>
-
+      <input type="date" name="date" required>
       <button type="submit">Book Now</button>
     </form>
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Address:Bidyarthi academy,near D.K college,sugo market,
-      Bharat petrol pump,sugo,756084</p>
-    <p>📞 Phone: +91-7855871430</p>
-    
+    <h2>📍 Contact Us</h2>
+    <p><strong>Address:</strong> Sugo, Bidyarthi Academy, Near Bharat Petrol Pump, DK College</p>
+    <p><strong>Mobile:</strong> <a href="tel:7855871430">7855871430</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2026 washing wallah. All rights reserved.</p>
+    <p>&copy; 2026 Washing Wallah. All rights reserved.</p>
   </footer>
 </body>
 </html>
